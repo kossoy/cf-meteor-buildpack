@@ -73,8 +73,7 @@ build() {
     status "Building meteor bundle"
     status "build-dir: $BUILD_DIR"
 
-    meteor build --directory /tmp/deploy --server http://localhost:3000
-    cd /tmp/deploy/bundle/programs/server
+    meteor build --directory /tmp/deploy --server http://localhost:3000 && cd /tmp/deploy/bundle/programs/server
     status "Installing npm dependencies"
     npm install 2>&1 | indent
     npm install --save babel-runtime 2>&1 | indent
