@@ -6,6 +6,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 jq=$DIR/jq
 chmod +x $jq
 
+echo "######################"
 echo $(pwd)
 echo $(ls -ahl)
 
