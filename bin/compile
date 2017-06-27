@@ -83,9 +83,9 @@ build() {
 
     mv $BUILD_DIR/.vendor $BUILD_DIR/vendor
     mv /tmp/deploy $BUILD_DIR/deploy
-    status $(ls -ahl $BUILD_DIR)
-    status $(ls -ahl $BUILD_DIR/deploy)
-
+    ls -ahl $BUILD_DIR 2>&1 | indent
+    ls -ahl $BUILD_DIR/deploy 2>&1 | indent
+    ls -ahl $BUILD_DIR/vendor 2>&1 | indent
 
   )
 }
