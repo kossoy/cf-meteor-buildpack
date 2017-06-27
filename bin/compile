@@ -82,7 +82,7 @@ build() {
     status $(ls -ahl $BUILD_DIR)
 
     mv $BUILD_DIR/.vendor $BUILD_DIR/vendor
-    mv /tmp/deploy /home/vcap/deploy
+    mv /tmp/deploy $BUILD_DIR/deploy
     status $(ls -ahl $BUILD_DIR)
     status $(ls -ahl $BUILD_DIR/deploy)
 
