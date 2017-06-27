@@ -94,7 +94,9 @@ build() {
 [ ! -d $CACHE_DIR ] && mkdir $CACHE_DIR
 
 status "build-dir: $BUILD_DIR"
-status $(ls -ahl $BUILD_DIR)
+ls -ahl $BUILD_DIR 2>&1 | indent
+ls -ahl $BUILD_DIR/.vendor 2>&1 | indent
+exit 0
 mkdir /tmp/deploy
 status $(ls -ahl /tmp/deploy)
 
