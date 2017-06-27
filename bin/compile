@@ -71,11 +71,13 @@ build() {
   (
     cd $BUILD_DIR
     status "Building meteor bundle"
-    meteor build --directory ../deploy --server http://localhost:3000
-    cd ../deploy/bundle/programs/server
+    status $BUILD_DIR
+    meteor build --directory /tmp/deploy --server http://localhost:3000
+    cd /tmp/deploy/bundle/programs/server
     status "Installing npm dependencies"
     npm install 2>&1 | indent
     mv $BUILD_DIR/.vendor $BUILD_DIR/vendor
+    mv /tmp/deploy $BUILD_DIR/deploy
   )
 }
 
