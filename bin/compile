@@ -96,7 +96,6 @@ build() {
 status "build-dir: $BUILD_DIR"
 ls -ahl $BUILD_DIR 2>&1 | indent
 ls -ahl $BUILD_DIR/.vendor 2>&1 | indent
-exit 0
 mkdir /tmp/deploy
 status $(ls -ahl /tmp/deploy)
 
