@@ -71,7 +71,9 @@ build() {
   (
     cd $BUILD_DIR
     status "Building meteor bundle"
-    status $BUILD_DIR
+    status "build-dir: $BUILD_DIR"
+    status $(ls -ahl $BUILD_DIR)
+
     meteor build --directory /tmp/deploy --server http://localhost:3000
     cd /tmp/deploy/bundle/programs/server
     status "Installing npm dependencies"
@@ -83,6 +85,10 @@ build() {
 
 [ ! -d $BUILD_DIR ] && mkdir $BUILD_DIR
 [ ! -d $CACHE_DIR ] && mkdir $CACHE_DIR
+
+status "build-dir: $BUILD_DIR"
+status $(ls -ahl $BUILD_DIR)
+
 
 install_node
 install_meteor
